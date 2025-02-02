@@ -9,6 +9,7 @@ import (
 
 func (c *Client) GetAllSmartSoftware() error {
 	rb, err := json.Marshal(c.PagerInfo)
+	fmt.Println(string(rb))
 	if err != nil {
 		return err
 	}
