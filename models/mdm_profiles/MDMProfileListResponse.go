@@ -1,6 +1,8 @@
 package mdm_profiles
 
-import "github.com/bart-lute/addigy-client-go/internal/models/mdm_configurations"
+import (
+    "github.com/bart-lute/addigy-client-go/models/mdm_configurations"
+)
 
 type MDMProfileListResponse struct {
     Count   int                              `json:"count"`
