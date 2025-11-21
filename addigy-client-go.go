@@ -1,0 +1,1 @@
+package addigy_client_go
