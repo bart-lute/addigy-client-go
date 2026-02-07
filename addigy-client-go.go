@@ -5,7 +5,6 @@ import (
     "fmt"
     "io"
     "log"
-    "log/slog"
     "net/http"
     "strings"
     "time"
@@ -42,7 +41,6 @@ func (c *Client) doRequest(method string, endPoint string, requestBody any, resp
     }
 
     url := fmt.Sprintf("%s/%s", c.baseUrl, endPoint)
-    slog.Debug(fmt.Sprintf("%s %s", method, url))
     request, err := http.NewRequest(method, url, requestBodyReader)
     if err != nil {
         log.Fatal(err)
@@ -68,7 +66,6 @@ func (c *Client) doRequest(method string, endPoint string, requestBody any, resp
         log.Fatal(err)
     }
     if response.StatusCode != http.StatusOK {
-        slog.Debug(fmt.Sprintf("API error: %s", body))
         log.Fatal(fmt.Sprintf("API error: %s", response.Status))
     }
 
